@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insurance Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="calculator-panel" aria-labelledby="calculator-title">
+        <header class="panel-header">
+          <p class="eyebrow">Vehicle Insurance</p>
+          <h1 id="calculator-title">Insurance Calculator</h1>
+        </header>
+
+        <form id="insurance-form" novalidate>
+          <div class="field-grid">
+            <div class="field-group">
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" min="18" max="100" step="1" inputmode="numeric" required />
+            </div>
+
+            <div class="field-group">
+              <label for="power">Car power (kW)</label>
+              <input id="power" name="power" type="number" min="10" max="500" step="1" inputmode="numeric" required />
+            </div>
+
+            <div class="field-group">
+              <label for="driving-years">Years with driving licence</label>
+              <input id="driving-years" name="driving-years" type="number" min="0" max="70" step="1" inputmode="numeric" required />
+            </div>
+
+            <div class="field-group">
+              <label for="car-price">Price of the new car (€)</label>
+              <input id="car-price" name="car-price" type="number" min="1000" step="100" inputmode="decimal" required />
+            </div>
+
+            <div class="field-group coverage-group">
+              <label for="coverage">Coverage</label>
+              <select id="coverage" name="coverage" required>
+                <option value="">Select coverage</option>
+                <option value="third-party">Only third party</option>
+                <option value="third-party-fire-theft">Third party fire and theft</option>
+                <option value="comprehensive">Fully comprehensive</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="error-message" class="error-message" aria-live="polite"></p>
+
+          <div class="result-box" aria-live="polite">
+            <span class="result-label">Estimated annual premium</span>
+            <strong id="premium-output">€0.00</strong>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
