@@ -3,60 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Insurance Calculator</title>
+    <meta name="description" content="Estimate your annual car insurance premium." />
+    <title>Coverline | Insurance calculator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Coverline home"><span class="brand-mark" aria-hidden="true">C</span><span>coverline</span></a>
+      <p class="header-note">Personal motor cover</p>
+    </header>
     <main class="page-shell">
-      <section class="calculator-panel" aria-labelledby="calculator-title">
-        <header class="panel-header">
-          <p class="eyebrow">Vehicle Insurance</p>
-          <h1 id="calculator-title">Insurance Calculator</h1>
-        </header>
-
-        <form id="insurance-form" novalidate>
-          <div class="field-grid">
-            <div class="field-group">
-              <label for="age">Age</label>
-              <input id="age" name="age" type="number" min="18" max="100" step="1" inputmode="numeric" required />
-            </div>
-
-            <div class="field-group">
-              <label for="power">Car power (kW)</label>
-              <input id="power" name="power" type="number" min="10" max="500" step="1" inputmode="numeric" required />
-            </div>
-
-            <div class="field-group">
-              <label for="driving-years">Years with driving licence</label>
-              <input id="driving-years" name="driving-years" type="number" min="0" max="70" step="1" inputmode="numeric" required />
-            </div>
-
-            <div class="field-group">
-              <label for="car-price">Price of the new car (€)</label>
-              <input id="car-price" name="car-price" type="number" min="1000" step="100" inputmode="decimal" required />
-            </div>
-
-            <div class="field-group coverage-group">
-              <label for="coverage">Coverage</label>
-              <select id="coverage" name="coverage" required>
-                <option value="">Select coverage</option>
-                <option value="third-party">Only third party</option>
-                <option value="third-party-fire-theft">Third party fire and theft</option>
-                <option value="comprehensive">Fully comprehensive</option>
-              </select>
-            </div>
-          </div>
-
-          <p id="error-message" class="error-message" aria-live="polite"></p>
-
-          <div class="result-box" aria-live="polite">
-            <span class="result-label">Estimated annual premium</span>
-            <strong id="premium-output">€0.00</strong>
-          </div>
-        </form>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Quick estimate</p>
+        <h1 id="page-title">Know what your cover could cost.</h1>
+        <p class="intro-copy">Tell us a little about you and your car. We’ll give you a clear annual estimate in seconds.</p>
       </section>
+      <section class="calculator-layout" aria-label="Insurance premium calculator">
+        <form id="insurance-form" class="calculator-card" novalidate>
+          <div class="card-heading"><div><p class="section-kicker">01 / Your details</p><h2>Build your estimate</h2></div><span class="required-note"><span aria-hidden="true">*</span> Required</span></div>
+          <div class="field-grid">
+            <div class="field-group"><label for="age">Your age <span aria-hidden="true">*</span></label><input id="age" name="age" type="number" min="18" max="100" step="1" inputmode="numeric" placeholder="e.g. 32" required /><span class="field-hint">Between 18 and 100</span></div>
+            <div class="field-group"><label for="driving-years">Years licensed <span aria-hidden="true">*</span></label><input id="driving-years" name="driving-years" type="number" min="0" max="70" step="1" inputmode="numeric" placeholder="e.g. 8" required /><span class="field-hint">How long you’ve been driving</span></div>
+            <div class="field-group"><label for="power">Car power (kW) <span aria-hidden="true">*</span></label><input id="power" name="power" type="number" min="10" max="500" step="1" inputmode="numeric" placeholder="e.g. 110" required /><span class="field-hint">Between 10 and 500 kW</span></div>
+            <div class="field-group"><label for="car-price">New car value (€) <span aria-hidden="true">*</span></label><div class="input-with-prefix"><span aria-hidden="true">€</span><input id="car-price" name="car-price" type="number" min="1000" step="100" inputmode="decimal" placeholder="e.g. 28000" required /></div><span class="field-hint">The purchase price of your car</span></div>
+            <div class="field-group field-group-wide"><label for="coverage">Choose your coverage <span aria-hidden="true">*</span></label><select id="coverage" name="coverage" required><option value="">Select a level of cover</option><option value="third-party">Only third party</option><option value="third-party-fire-theft">Third party, fire and theft</option><option value="comprehensive">Fully comprehensive</option></select><span class="field-hint">You can change this to compare options</span></div>
+          </div>
+          <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+          <button class="calculate-button" type="submit">Calculate my estimate <span aria-hidden="true">→</span></button>
+        </form>
+        <aside class="result-card" aria-live="polite">
+          <div class="result-topline"><span class="status-dot" aria-hidden="true"></span><span>Estimate ready when you are</span></div>
+          <div class="result-content"><p class="section-kicker">02 / Your estimate</p><h2>Annual premium</h2><strong id="premium-output" class="premium-output">—</strong><p id="result-description" class="result-description">Complete your details to see your personalised estimate.</p></div>
+          <div class="result-footnote">Indicative price only. Your final premium may vary.</div>
+        </aside>
+      </section>
+      <p class="page-footnote">Your information stays in this browser and is not sent anywhere.</p>
     </main>
-
     <script src="script.js"></script>
   </body>
 </html>

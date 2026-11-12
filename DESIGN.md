@@ -11,4 +11,5 @@
 
 * do not use rounded corners
 * do not use emojis 
-* use a san-serif font 
+* use helvetica neue
+* the design more modern and refine  

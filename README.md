@@ -14,6 +14,3 @@ calculator will immedialy return the price of the insurance based on the data en
 
 the project is built using htlm, css and javascript. single-page HTML5 application with no backend 
 
-## design 
-
-follow the design giudlines in 'DESIGN.md' file.
